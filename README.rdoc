@@ -1,0 +1,5 @@
+= Primeiro passo
+
+  sudo apt-get install git-core ruby ruby1.8
+
+
