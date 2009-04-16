@@ -1,6 +1,7 @@
 = Primeiro passo
 
-  sudo apt-get install git-core ruby1.8
+  sudo apt-get update
+  sudo apt-get install git-core ruby ruby1.8
 
   cd ~
   git clone git://github.com/cleitonfco/my-ubuntu-dev.git

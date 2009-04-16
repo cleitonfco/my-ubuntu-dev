@@ -12,8 +12,6 @@ end
 packs = YAML.load(File.read('packs.yml'))
 gems = YAML.load(File.read('gems.yml'))
 
-system "sudo apt-get update"
-
 if !system "sudo apt-get install #{packs.join(' ')} -y"
   raise "Couldn't install packages"
 end
