@@ -1,0 +1,15 @@
+---
+- bittorrent
+- curl
+- gsfonts-x11
+- htop
+- imagemagick
+- irb1.8
+- libxml2-dev
+- netcat
+- nmap
+- pidgin-libnotify
+- ruby-gnome2
+- tree
+- xulrunner
+- zsnes
