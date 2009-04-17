@@ -26,6 +26,9 @@ system "apt-get -y install ruby ruby1.8 irb ruby1.8-dev ruby1.8 ri1.8 rdoc1.8 ir
 puts "Instalando bancos de dados sqlite3, MySql e Postgres"
 system "apt-get -y install libdbm-ruby libdbi-ruby sqlite3 sqlite3-ruby libsqlite3-dev libdbd-sqlite3-ruby libsqlite3-ruby mysql-client-5.0 mysql-server-5.0 mysql-admin python-mysqldb libmysql-ruby libmysqlclient15-dev mysql-query-browser libpq-dev libpgsql-ruby pgadmin3 postgresql-8.3 postgresql-client-8.3 postgresql-client-common postgresql-common postgresql-contrib-8.3"
 
+puts "Instalando Git..."
+system "apt-get -y install git-core git-doc git-gui gitk"
+
 puts "Instalando RubyGems 1.3.2 a partir do Codigo-fonte..."
 system "wget http://rubyforge.org/frs/download.php/55066/rubygems-1.3.2.tgz && tar -xzv rubygems-1.3.2.tgz"
 system "cd rubygems-1.3.2 && ruby setup.rb install"
@@ -33,13 +36,12 @@ system "cd .. && rm -rf rubygems-1.3.2"
 system "gem sources -a http://gems.github.com"
 system "gem update"
 
-puts "Instalando algumas gems..."
+puts "Instalando algumas Gems..."
 system "gem install rails mongrel rake rack rcov capistrano capistrano-ext hpricot treetop ruby-debug passenger mysql postgres ZenTest authlogic github json rmagick json_pure launchy redgreen syntax mislav-will_paginate jchupp-is_paranoid thoughtbot-paperclip thoughtbot-shoulda faker notahat-machinist rspec rspec-rails cucumber webrat sqlite3-ruby vlad wirble twitter xmpp4r"
 
 puts "Instalando alguns programas básicos..."
 system "apt-get -y install pidgin-libnotify zsnes tree meld rcov msttcorefonts"
 
-Development::Install.prompt "Instalar Git", "apt-get -y install git-core git-doc git-gui gitk"
 Development::Install.prompt "Instalar Filezilla", "apt-get -y install filezilla"
 
 @plugins_gedit = "apt-get -y install gedit-plugins python-webkitgtk python-pyinotify && 
@@ -57,7 +59,9 @@ apt-get update &&
 apt-get -y install libapache2-mod-passenger"
 Development::Install.prompt "Instalar mod_rails", @mod_rails
 
-Development::Install.prompt "Instalar PHP5", "apt-get -y install php5 libapache2-mod-php5 php5-mysql phpmyadmin libapache2-mod-auth-mysql && /etc/init.d/apache2 restart"
+Development::Install.prompt "Instalar PHP5", "apt-get -y install php5 libapache2-mod-php5 php5-mysql phpmyadmin libapache2-mod-auth-mysql"
+
+system "/etc/init.d/apache2 restart"
 
 puts "Finalizando instalacao..."
 print "Versão do Ruby: "
