@@ -31,7 +31,6 @@
 - rspec-rails
 - cucumber
 - webrat
-- install
 - sqlite3-ruby
 - vlad
 - wirble
