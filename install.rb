@@ -14,6 +14,11 @@ module Development
   end
 end
 
+if `whoami`.chomp != "root"
+  puts "Você deve usar esse script como um super usuário."
+  exit 1
+end
+
 puts "Iniciando..."
 
 puts "Instalando libs basicas (programação)..."
