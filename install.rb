@@ -29,7 +29,7 @@ puts "Instalando libs especificas do Ruby..."
 system "apt-get -y install ruby ruby1.8 irb ruby1.8-dev ruby1.8 ri1.8 rdoc1.8 irb1.8"
 
 puts "Instalando bancos de dados sqlite3, MySql e Postgres"
-system "apt-get -y install libdbm-ruby libdbi-ruby sqlite3 sqlite3-ruby libsqlite3-dev libdbd-sqlite3-ruby libsqlite3-ruby mysql-client-5.0 mysql-server-5.0 mysql-admin python-mysqldb libmysql-ruby libmysqlclient15-dev mysql-query-browser libpq-dev libpgsql-ruby pgadmin3 postgresql-8.3 postgresql-client-8.3 postgresql-client-common postgresql-common postgresql-contrib-8.3"
+system "apt-get -y install libdbm-ruby libdbi-ruby sqlite3 libsqlite3-ruby libsqlite3-dev libdbd-sqlite3-ruby libsqlite3-ruby mysql-client-5.0 mysql-server-5.0 mysql-admin python-mysqldb libmysql-ruby libmysqlclient15-dev mysql-query-browser libpq-dev libpgsql-ruby pgadmin3 postgresql-8.3 postgresql-client-8.3 postgresql-client-common postgresql-common postgresql-contrib-8.3"
 
 puts "Instalando Git..."
 system "apt-get -y install git-core git-doc git-gui gitk"
