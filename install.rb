@@ -35,7 +35,7 @@ puts "Instalando Git..."
 system "apt-get -y install git-core git-doc git-gui gitk"
 
 puts "Instalando RubyGems 1.3.2 a partir do Codigo-fonte..."
-system "wget http://rubyforge.org/frs/download.php/55066/rubygems-1.3.2.tgz && tar -xzv rubygems-1.3.2.tgz"
+system "wget http://rubyforge.org/frs/download.php/55066/rubygems-1.3.2.tgz && tar -xzf rubygems-1.3.2.tgz"
 system "cd rubygems-1.3.2 && ruby setup.rb install"
 system "cd .. && rm -rf rubygems-1.3.2"
 system "gem sources -a http://gems.github.com"
@@ -51,7 +51,7 @@ Development::Install.prompt "Instalar Filezilla", "apt-get -y install filezilla"
 
 @plugins_gedit = "apt-get -y install gedit-plugins python-webkitgtk python-pyinotify && 
 git clone git://github.com/lexrupy/gmate.git && 
-cd gmate && sh intall.sh && cd .. && rm -rf gmate && 
+cd gmate && sh install.sh && cd .. && rm -rf gmate && 
 git clone git://github.com/oliver/gedit-file-search.git && 
 cp gedit-file-search/file-search.* ~/.gnome2/gedit/plugins/ && rm -rf gedit-file-search && 
 git clone git://github.com/caironoleto/rspec_mate.git && 
