@@ -42,7 +42,7 @@ system "gem sources -a http://gems.github.com"
 system "gem update"
 
 puts "Instalando algumas Gems..."
-system "gem install rails mongrel rake rack rcov capistrano capistrano-ext hpricot treetop ruby-debug passenger mysql postgres ZenTest authlogic github json rmagick json_pure launchy redgreen syntax mislav-will_paginate jchupp-is_paranoid thoughtbot-paperclip thoughtbot-shoulda faker notahat-machinist rspec rspec-rails cucumber webrat sqlite3-ruby vlad wirble twitter xmpp4r"
+system "sudo gem install rails mongrel rake rack rcov capistrano capistrano-ext hpricot treetop ruby-debug passenger mysql postgres ZenTest authlogic github json rmagick json_pure launchy redgreen syntax mislav-will_paginate jchupp-is_paranoid thoughtbot-paperclip thoughtbot-shoulda faker notahat-machinist rspec rspec-rails cucumber webrat sqlite3-ruby vlad wirble twitter xmpp4r"
 
 puts "Instalando alguns programas básicos..."
 system "apt-get -y install pidgin-libnotify zsnes tree meld rcov msttcorefonts"
