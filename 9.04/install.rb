@@ -24,7 +24,7 @@ puts "Iniciando..."
 git-core
 ruby
 ruby1.8
-sun‐java6‐jre
+sun-java6-jre
 sun-java6-plugin
 locate
 curl
