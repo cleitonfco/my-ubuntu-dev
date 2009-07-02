@@ -1,17 +1,13 @@
 #!/usr/bin/env ruby
 
-module Development
-  class Install
-    def self.prompt(question, command)
-      print "#{question}? (y/n): "
-      input = gets.chomp
-      while (input !~ /[yn]/) do
-        print "#{question}? Digite (y) para Sim e (n) para Não: "
-        input = gets.chomp
-      end
-      system command if (input == "y")
-    end
+def prompt(question, commands)
+  print "#{question}? (y/n): "
+  input = gets.chomp
+  while (input !~ /[yn]/) do
+    print "#{question}? Digite (y) para Sim e (n) para Não: "
+    input = gets.chomp
   end
+  system commands if input == "y"
 end
 
 if `whoami`.chomp != "root"
@@ -21,19 +17,26 @@ end
 
 puts "Iniciando..."
 
+rails = "echo 'Instalando Ruby 1.8' && 
+echo 'apt-get -y install ruby1.8 libxml-ruby1.8 libxml2-dev libxslt1-dev libreadline-ruby1.8 irb1.8 ruby1.8-dev ri1.8 rdoc1.8' &&
+echo 'Instalando RubyGems a partir do Codigo-fonte' &&
+echo 'wget http://rubyforge.org/frs/download.php/57643/rubygems-1.3.4.tgz' && echo 'tar -xzf rubygems-1.3.4.tgz' && 
+echo 'cd rubygems-1.3.4 && ruby setup.rb install && cd .. && rm -rf rubygems-1.3.4' && 
+echo 'gem sources -a http://gems.github.com && gem update' &&
+echo 'Instalando Rails' &&
+echo 'gem install rails'"
+prompt("Você deseja instalar Ruby e Rails?", rails)
+
+
 git-core
 ruby
-ruby1.8
+g++
 sun-java6-jre
 sun-java6-plugin
 locate
 curl
-libreadline-ruby1.8
 imagemagick
-irb1.8
-ruby1.8-dev
-ri1.8
-rdoc1.8
+libmagickwand-dev
 libdbm-ruby
 libdbi-ruby
 sqlite3
@@ -79,6 +82,9 @@ system "gem update"
 
 puts "Instalando algumas Gems..."
 system "sudo gem install rails thin ZenTest passenger mysql postgres json authlogic rmagick json_pure rake hpricot mislav-will_paginate jchupp-is_paranoid thoughtbot-paperclip thoughtbot-shoulda faker notahat-machinist rspec rspec-rails cucumber webrat sqlite3-ruby"
+                         json mysql passenger postgres rails rake ZenTest
+                         rack thin
+                         hpricot nokogiri authlogic rmagick json_pure mislav-will_paginate jchupp-is_paranoid thoughtbot-paperclip thoughtbot-shoulda faker notahat-machinist rspec rspec-rails cucumber webrat sqlite3-ruby
 system "sudo gem install mongrel rack rcov capistrano capistrano-ext treetop ruby-debug github  launchy redgreen syntax vlad wirble twitter xmpp4r"
 
 puts "Instalando alguns programas básicos..."
